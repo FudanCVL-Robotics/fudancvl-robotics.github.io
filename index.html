@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <meta name="description" content="FudanCVL Robotics is a research group within FudanCVL. Our research spans visual perception and generation, world models, robotics, and AI agents."/>
+  <meta property="og:title" content="FudanCVL Robotics — Research"/>
+  <meta property="og:description" content="FudanCVL Robotics is a research group within FudanCVL. Our research spans visual perception and generation, world models, robotics, and AI agents."/>
+  <meta property="og:type" content="website"/>
+  <title>FudanCVL Robotics — Research</title>
+  <link rel="icon" href="assets/favicon.svg?v=6" type="image/svg+xml"/>
+  <link rel="preload" href="assets/fonts/hanken-400.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="preload" href="assets/fonts/hanken-500.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="preload" href="assets/fonts/hanken-600.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="#top" aria-label="FudanCVL Robotics home"><span>FudanCVL <span class="brand-accent">Robotics</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#research" aria-current="location">Research</a>
+      <a href="leaderboards/">Leaderboards</a>
+      <a href="code/">Code</a>
+      <a href="planets/">Worlds</a>
+      <a href="about/index.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-toggle" aria-label="Search research" aria-controls="research-search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.5 15.5 4.3 4.3"/></svg>
+      </button>
+      <a class="github-link" href="https://github.com/FudanCVL">GitHub <span aria-hidden="true">↗</span></a>
+      <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <a href="#research" aria-current="location">Research <span>↓</span></a>
+    <a href="leaderboards/">Leaderboards <span>↗</span></a>
+    <a href="code/">Code <span>↗</span></a>
+    <a href="planets/">Worlds <span>↗</span></a>
+    <a href="about/index.html">About <span>↗</span></a>
+    <a href="https://github.com/FudanCVL">GitHub <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="overview" class="home-hero container">
+    <div class="home-hero-copy">
+      <p class="update-note"><span aria-hidden="true"></span><time datetime="2026-11-18">Updated November 18, 2026</time></p>
+      <h1>FudanCVL <span class="brand-accent">Robotics</span></h1>
+      <p class="home-hero-deck">Our research spans visual perception and generation, world models, robotics, and AI agents.</p>
+      <nav class="hero-actions" aria-label="FudanCVL Resources">
+        <a class="reference-button" href="https://github.com/FudanCVL">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="reference-button" href="https://huggingface.co/FudanCVL">Hugging Face <span aria-hidden="true">↗</span></a>
+        <a class="reference-button" href="https://henghuiding.com/group/">FudanCVL <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+    <div class="research-atlas" role="group" aria-label="Explore research by topic">
+      <a class="atlas-page atlas-page-one" href="#research" data-explore-topic="World Models" aria-label="Explore world models projects">
+        <span>World Models</span><strong>Long-Horizon<br/>Interaction</strong>
+        <img src="assets/planets/planet-01-wbench-long-512.webp" srcset="assets/planets/planet-01-wbench-long-512.webp 512w, assets/planets/planet-01-wbench-long.webp 1024w" sizes="(max-width: 520px) 31vw, min(27vw, 205px)" alt="" width="1024" height="683" decoding="async"/>
+      </a>
+      <a class="atlas-page atlas-page-two" href="#research" data-explore-topic="Agents" aria-label="Explore agent projects">
+        <span>Agents</span><strong>Planning<br/>&amp; Memory</strong>
+        <img src="assets/planets/planet-05-agent-arena-512.webp" srcset="assets/planets/planet-05-agent-arena-512.webp 512w, assets/planets/planet-05-agent-arena.webp 1024w" sizes="(max-width: 520px) 31vw, min(27vw, 205px)" alt="" width="1024" height="683" decoding="async"/>
+      </a>
+      <a class="atlas-page atlas-page-three" href="#research" data-explore-topic="Robotics" aria-label="Explore robotics projects">
+        <span>Robotics</span><strong>Actions &amp;<br/>Outcomes</strong>
+        <img src="assets/planets/planet-02-wbench-robo-512.webp" srcset="assets/planets/planet-02-wbench-robo-512.webp 512w, assets/planets/planet-02-wbench-robo.webp 1024w" sizes="(max-width: 520px) 31vw, min(27vw, 205px)" alt="" width="1024" height="683" decoding="async"/>
+      </a>
+      <a class="atlas-page atlas-page-four" href="#research" data-explore-topic="Vision" aria-label="Explore vision and video projects">
+        <span>Vision &amp; Video</span><strong>Events<br/>Over Time</strong>
+        <img src="assets/planets/planet-08-video-reason-512.webp" srcset="assets/planets/planet-08-video-reason-512.webp 512w, assets/planets/planet-08-video-reason.webp 1024w" sizes="(max-width: 520px) 31vw, min(27vw, 205px)" alt="" width="1024" height="683" decoding="async"/>
+      </a>
+      <div class="atlas-orbit" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="research" class="research-section container">
+    <div class="research-heading">
+      <h2>Research Projects</h2>
+      <form id="project-search" class="project-search" role="search">
+        <label class="sr-only" for="research-search">Search Projects</label>
+        <input id="research-search" type="search" placeholder="Search Projects" autocomplete="off" enterkeyhint="search"/>
+        <kbd aria-hidden="true">/</kbd>
+      </form>
+    </div>
+
+    <div class="topic-filters" role="group" aria-label="Filter research by topic">
+      <button data-topic="all" aria-pressed="true">All Projects <span>10</span></button>
+      <button data-topic="World Models" aria-pressed="false">World Models <span>3</span></button>
+      <button data-topic="Agents" aria-pressed="false">Agents <span>3</span></button>
+      <button data-topic="Robotics" aria-pressed="false">Robotics <span>1</span></button>
+      <button data-topic="Vision" aria-pressed="false">Vision &amp; Video <span>2</span></button>
+      <button data-topic="Tools" aria-pressed="false">Tools <span>1</span></button>
+    </div>
+
+    <p class="sr-only" id="result-count" role="status">10 projects</p>
+    <div id="research-grid" class="work-grid"></div>
+    <div class="empty-state" id="empty-state" hidden>
+      <h3>No Matching Projects</h3><p>Try a different topic or search term.</p><button class="reference-button" id="reset-search">Clear Filters</button>
+    </div>
+    <noscript><p>Explore our research: <a href="research/wbench/">WBench</a>, <a href="research/wbench-long/">WBench-Long</a>, <a href="research/wbench-robo/">WBench-Robo</a>, <a href="research/wbench-plus-plus/">WBench++</a>, <a href="research/agent-loop/">AgentLoop</a>, <a href="research/agent-arena/">AgentArena</a>, <a href="research/agent-memory/">AgentMemory</a>, <a href="research/scene-edit/">SceneEdit</a>, <a href="research/video-reason/">VideoReason</a>, <a href="research/world-trace/">WorldTrace</a>.</p></noscript>
+  </section>
+
+  <section id="about" class="about container">
+    <div class="about-heading"><h2>About <span class="brand-name">FudanCVL <span class="brand-accent">Robotics</span></span></h2></div>
+    <div class="about-copy">
+      <p>We are a research group within FudanCVL. We build benchmarks and tools to study how models interpret videos, predict what happens next, and choose actions.</p>
+      <a class="text-arrow-link" href="about/index.html">Meet the team <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer container">
+  <div class="footer-top"><a class="footer-wordmark" href="#top">FudanCVL <span class="brand-accent">Robotics</span></a><p>Visual perception and generation, world models, robotics, and AI agents.</p><div class="footer-links"><a href="#research">Research</a><a href="leaderboards/">Leaderboards</a><a href="code/">Code</a><a href="planets/">Worlds</a></div></div>
+  <div class="footer-bottom"><span>FudanCVL Robotics · 2026</span><span>Research Preview</span><a href="#top">Back to top ↑</a></div>
+</footer>
+</body>
+</html>

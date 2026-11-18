@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#ffffff"/>
+  <meta name="description" content="Explore WBench world model rankings across visual quality, control, consistency, and physics. Compare models, evaluation splits, and judges."/>
+  <title>WBench Leaderboard — FudanCVL Robotics</title>
+  <link rel="icon" href="../assets/favicon.svg?v=6" type="image/svg+xml"/>
+  <link rel="preload" href="../assets/fonts/hanken-400.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="preload" href="../assets/fonts/hanken-500.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="preload" href="../assets/fonts/hanken-600.ttf" as="font" type="font/ttf" crossorigin/>
+  <link rel="stylesheet" href="../styles.css"/>
+  <link rel="stylesheet" href="leaderboard.css"/>
+  <script src="../app.js" defer></script>
+  <script src="leaderboard.js" defer></script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="header-inner">
+  <a class="wordmark" href="../index.html" aria-label="FudanCVL Robotics home"><span>FudanCVL <span class="brand-accent">Robotics</span></span></a>
+  <nav class="desktop-nav" aria-label="Main navigation"><a href="../index.html#research">Research</a><a href="../leaderboards/" aria-current="page">Leaderboards</a><a href="../code/">Code</a><a href="../planets/">Worlds</a><a href="../about/index.html">About</a></nav>
+  <div class="header-actions"><a class="github-link" href="https://github.com/FudanCVL">GitHub <span aria-hidden="true">↗</span></a><button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button></div>
+</div><nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="../index.html#research">Research <span>↗</span></a><a href="../leaderboards/" aria-current="page">Leaderboards <span>↗</span></a><a href="../code/">Code <span>↗</span></a><a href="../planets/">Worlds <span>↗</span></a><a href="../about/index.html">About <span>↗</span></a><a href="https://github.com/FudanCVL">GitHub <span aria-hidden="true">↗</span></a></nav></header>
+<main id="main" class="container board-main">
+  <a class="board-back-link" href="../leaderboards/">← All leaderboards</a>
+  <section class="board-hero" aria-labelledby="page-title">
+    <div><p class="board-eyebrow">WBENCH <span>/</span> LEADERBOARD</p><h1 id="page-title">World models.<br/>Measured together.</h1><p class="board-deck">A clearer picture of how generated worlds look,<br class="desktop-break"/> respond, and hold together.</p><a class="board-read-link" href="../research/wbench/">Meet the benchmark <span aria-hidden="true">↗</span></a></div>
+    <div class="board-visual"><div class="gradient-cover gradient-lime" aria-hidden="true"></div><div class="board-visual-caption"><span>Beyond the next frame.</span><span>WBench</span></div></div>
+  </section>
+  <section class="rankings" aria-labelledby="rankings-heading">
+    <div class="rankings-heading"><h2 id="rankings-heading">The leaderboard</h2><p>Snapshot <time id="snapshot-date">—</time></p></div>
+    <div class="dataset-toolbar">
+      <div class="split-tabs" role="group" aria-label="Evaluation split"><button type="button" data-split="navi" aria-pressed="true">Navigation <span>158 cases</span></button><button type="button" data-split="full" aria-pressed="false">Full benchmark <span>289 cases</span></button></div>
+      <label class="judge-picker"><span>VLM judge</span><select id="judge" aria-describedby="cohort-note"><option value="doubao">Doubao · Original</option><option value="qwen">Qwen3.8 · Beta</option></select></label>
+    </div>
+    <div class="cohort-line"><p id="cohort-note">Loading evaluation results…</p><a href="#reading-results">How to read the scores <span aria-hidden="true">↗</span></a></div>
+    <div class="filter-toolbar">
+      <label class="model-search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.5 15.5 4.3 4.3"/></svg><span class="sr-only">Search models or teams</span><input id="model-search" type="search" placeholder="Search models or teams" autocomplete="off"/></label>
+      <div class="type-filters" role="group" aria-label="Control type"><button data-type="all" aria-pressed="true">All <span></span></button><button data-type="text" aria-pressed="false">Text <span></span></button><button data-type="camera" aria-pressed="false">Camera <span></span></button><button data-type="action" aria-pressed="false">Action <span></span></button></div>
+      <label class="availability-picker"><span class="sr-only">Model availability</span><select id="availability"><option value="all">All availability</option><option>Open Source</option><option>API</option><option>Web</option><option>Unreleased</option><option>Not specified</option></select></label>
+    </div>
+    <div class="table-caption"><p id="result-status" role="status" aria-live="polite">Loading models…</p><button id="download-csv" class="export-button" disabled>Download CSV <span aria-hidden="true">↓</span></button></div>
+    <p class="mobile-table-hint">Swipe to explore all five dimensions <span aria-hidden="true">→</span></p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Model rankings. Scroll horizontally for all dimensions.">
+      <table class="ranking-table"><caption class="sr-only">World model rankings. Scores are out of 100; higher is better. Select up to three models to compare.</caption><thead><tr>
+        <th scope="col" class="select-col"><span class="sr-only">Compare</span></th><th scope="col" class="rank-col"><span title="Overall rank within this split and judge">#</span></th><th scope="col" class="model-col"><button data-sort="name">Model <span aria-hidden="true">↕</span></button></th>
+        <th scope="col" aria-sort="descending"><button data-sort="0">Overall <span aria-hidden="true">↓</span></button></th>
+        <th scope="col"><button data-sort="1" title="Video quality">Quality <span aria-hidden="true">↕</span></button></th><th scope="col"><button data-sort="2" title="Setting adherence">Setting <span aria-hidden="true">↕</span></button></th><th scope="col"><button data-sort="3" title="Interaction adherence">Interaction <span aria-hidden="true">↕</span></button></th><th scope="col"><button data-sort="4" title="Consistency">Consistency <span aria-hidden="true">↕</span></button></th><th scope="col"><button data-sort="5" title="Physics compliance">Physics <span aria-hidden="true">↕</span></button></th>
+      </tr></thead><tbody id="ranking-rows"></tbody></table>
+    </div>
+    <div id="board-empty" class="board-empty" hidden><h3>No models found.</h3><p>Try a different name or clear your filters.</p><button id="clear-filters" class="pill-link">Clear filters <span>↗</span></button></div>
+    <div id="board-error" class="board-empty" hidden><h3>Results could not be loaded.</h3><p>Refresh the page to try again, or visit the public WBench leaderboard.</p><a class="pill-link" href="https://meituan-longcat.github.io/WBench/#leaderboard" target="_blank" rel="noopener noreferrer">Open source leaderboard ↗</a></div>
+    <noscript><p>This interactive leaderboard requires JavaScript. <a href="https://meituan-longcat.github.io/WBench/#leaderboard">View the public WBench results.</a></p></noscript>
+    <div class="table-footnote"><span>Scores out of 100 · Higher is better</span><span>Select up to 3 models to compare. Click a model for details.</span></div>
+  </section>
+  <section id="reading-results" class="reading-results"><div><p class="board-eyebrow">READING THE RESULTS</p><h2>More than a<br/>single number.</h2><a class="board-read-link" href="https://meituan-longcat.github.io/WBench/#leaderboard" target="_blank" rel="noopener noreferrer">Source leaderboard <span aria-hidden="true">↗</span></a></div><div class="method-notes"><details open><summary>Five dimensions, one overall score <span>+</span></summary><p>WBench measures video quality, setting adherence, interaction adherence, consistency, and physics compliance. Overall scores are copied from the public leaderboard; displayed rounded dimensions are not used to recalculate them.</p></details><details><summary>Choose the right evaluation split <span>+</span></summary><p>Navigation covers 158 cases with 19 metrics. The full benchmark covers 289 cases with 22 metrics, adding subject actions, event edits, and perspective switches. Compare scores within the same split and judge.</p></details><details><summary>Original and beta judges <span>+</span></summary><p>Doubao-Seed-2.0-lite is the original VLM judge. Qwen3.8-27B is a self-hosted beta judge, available for a subset of navigation submissions. The judge affects scene adherence, subject adherence, and physics fidelity. Beta results form a separate ranking.</p></details><details><summary>Submission sources and coverage <span>+</span></summary><p>“Self-reported” identifies a self-evaluation submission. “Mixed evaluation” identifies self-evaluation with organizer VLM evaluation. Unspecified sources remain unspecified. Open model details to inspect provenance and the sample count for each metric. Model variants count as separate entries.</p></details></div></section>
+</main>
+<div id="compare-tray" class="compare-tray" hidden><div class="compare-tray-inner"><div id="selected-models"></div><div class="compare-actions"><button id="clear-selection">Clear</button><button id="open-comparison" class="pill-link dark" disabled>Compare models <span>↗</span></button></div></div></div>
+<p id="selection-status" class="sr-only" role="status" aria-live="polite"></p>
+<dialog id="model-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><p id="dialog-eyebrow" class="board-eyebrow"></p><button id="close-dialog" class="icon-button" aria-label="Close details">×</button></div><h2 id="dialog-title"></h2><p id="dialog-context"></p><div id="dialog-body"></div></dialog>
+<footer class="site-footer container"><div class="footer-top"><a class="footer-wordmark" href="../index.html">FudanCVL <span class="brand-accent">Robotics</span></a><p>Visual perception and generation, world models, robotics, and AI agents.</p><div class="footer-links"><a href="../index.html#research">Research</a><a href="../leaderboards/">Leaderboards</a><a href="../code/">Code</a><a href="../planets/">Worlds</a></div></div><div class="footer-bottom"><span>FudanCVL Robotics · 2026</span><span>Research Preview</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
