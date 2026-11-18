@@ -305,10 +305,56 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   .atlas-page span { font-size: 10px; }
 }
 /* Browsable library for the 50 prepared project worlds. */
-.planet-library-main{padding-top:76px;padding-bottom:110px}
-.planet-library-heading{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:80px;align-items:end;padding-bottom:54px;border-bottom:1px solid var(--line)}
-.planet-library-heading h1 { font-size: clamp(55px,6vw,84px); line-height: .97; letter-spacing: -.055em; font-weight: 600; margin: 0; }
-.planet-library-heading > p { max-width: 38ch; font-size: 18px; line-height: 1.5; color: #535b66; margin: 0; }
+.planet-library-main { padding-top: 40px; padding-bottom: 110px; }
+.planet-library-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  min-height: 244px;
+  padding: clamp(30px, 5vw, 66px);
+  border-radius: 12px;
+  color: #f8faff;
+  background:
+    radial-gradient(ellipse at 88% 118%, #405785 0%, transparent 59%),
+    radial-gradient(ellipse at 85% 6%, #292747 0%, transparent 54%),
+    #0b1324;
+}
+.planet-library-heading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 9% 25%, #a4cfff90 0 1px, transparent 1.6px),
+    radial-gradient(circle at 24% 78%, #c4d4ff80 0 1px, transparent 1.6px),
+    radial-gradient(circle at 42% 18%, #edf1ffa0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 53% 32%, #afccff80 0 1px, transparent 1.6px),
+    radial-gradient(circle at 62% 84%, #abc4ffb0 0 1px, transparent 1.6px),
+    radial-gradient(circle at 75% 19%, #c6dfff 0 1.1px, #a9c7ff44 2px, transparent 5px),
+    radial-gradient(circle at 88% 34%, #d6e9ffaa 0 1px, transparent 1.6px),
+    radial-gradient(circle at 92% 80%, #e9dafa80 0 1px, transparent 1.6px),
+    radial-gradient(circle at 96% 12%, #9dd2ff90 0 1px, transparent 1.6px);
+}
+.planet-library-heading::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -6%;
+  bottom: -55%;
+  width: 64%;
+  aspect-ratio: 2.6;
+  border: 1px solid #b4cdff45;
+  outline: 1px solid #b4cdff25;
+  outline-offset: 16px;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+.planet-library-heading h1 { margin: 0; font-size: clamp(44px, 5.1vw, 70px); line-height: 1; letter-spacing: -.055em; font-weight: 600; }
+.planet-library-heading > p { max-width: 38ch; margin: 0; color: #d7e1f5; font-size: 18px; line-height: 1.5; }
 .planet-library-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 0; }
 .planet-library-toolbar > div { display: flex; flex-wrap: wrap; gap: 6px; }
 .planet-library-toolbar button { display: inline-flex; align-items: baseline; gap: 6px; padding: 9px 13px; border-radius: 20px; background: #f1f3f5; color: #404955; font-size: 13px; line-height: 1.2; }
@@ -335,9 +381,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   .planet-library-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:600px) {
-  .planet-library-main { padding-block: 38px 65px; }
-  .planet-library-heading { padding-bottom: 28px; }
-  .planet-library-heading h1 { font-size: 50px; }
+  .planet-library-main { padding-block: 24px 65px; }
+  .planet-library-heading { min-height: 0; padding: 30px 24px; }
+  .planet-library-heading h1 { font-size: clamp(38px, 9vw, 50px); }
   .planet-library-heading > p { font-size: 16px; }
   .planet-library-toolbar { align-items: flex-start; flex-direction: column; gap: 10px; padding-block: 18px; }
   .planet-library-grid { grid-template-columns: 1fr; gap: 30px; }
