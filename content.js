@@ -1,5 +1,14 @@
 // One record is one research work. Resources belong inside the work's article.
 window.RESEARCH_CONTENT = [{
+  id: "roboedit", name: "RoboEdit", title: "Introducing RoboEdit",
+  detailCover: "assets/covers/roboedit",
+  description: "A benchmark for visual goal editing in embodied manipulation, across five settings of history, views, and demonstrations.",
+  date: "2026-11-19",
+  category: "Research", topic: "Robotics",
+  repository: "https://github.com/FudanCVL/RoboEdit",
+  planet: "assets/planets/planet-roboedit.webp", planetAlt: "An emerald ocean world with golden terraced continents", coverTitle: "RoboEdit", url: "research/roboedit/",
+  keywords: "robotics manipulation image editing visual goals benchmark evaluation memory multi-view in-context learning"
+}, {
   id: "wbench",
   detailCover: "assets/covers/wbench",
   title: "Introducing WBench",

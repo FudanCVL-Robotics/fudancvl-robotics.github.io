@@ -449,3 +449,15 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   .team-directory { grid-template-columns: 1fr; gap: 40px; padding-block: 44px 64px; }
   .team-intro p { margin-top: 16px; }
 }
+
+/* Article figures and result tables (RoboEdit). */
+.article-figure { margin: 36px 0 0; }
+.article-figure img { display: block; width: 100%; height: auto; border-radius: 5px; background: #fff; }
+.article-figure figcaption { font-size: 12px; color: #777; line-height: 1.6; margin-top: 12px; }
+.result-table-wrap { overflow-x: auto; margin: 30px 0 0; border-top: 1px solid var(--line); }
+.result-table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.result-table th { font-size: 10px; font-weight: 500; color: #777; text-align: right; padding: 12px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.result-table td { text-align: right; padding: 9px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.result-table th:nth-child(-n+3), .result-table td:nth-child(-n+3) { text-align: left; }
+.result-table td:first-child, .result-table td:nth-child(3) { color: #8b9288; }
+.result-table td strong { font-weight: 600; }
